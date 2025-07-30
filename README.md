@@ -1,183 +1,115 @@
-# Supabase CLI
+# 🌱 EcoGreen PRO Website
 
-[![Coverage Status](https://coveralls.io/repos/github/supabase/cli/badge.svg?branch=main)](https://coveralls.io/github/supabase/cli?branch=main) [![Bitbucket Pipelines](https://img.shields.io/bitbucket/pipelines/supabase-cli/setup-cli/master?style=flat-square&label=Bitbucket%20Canary)](https://bitbucket.org/supabase-cli/setup-cli/pipelines) [![Gitlab Pipeline Status](https://img.shields.io/gitlab/pipeline-status/sweatybridge%2Fsetup-cli?label=Gitlab%20Canary)
-](https://gitlab.com/sweatybridge/setup-cli/-/pipelines)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3-blue?logo=tailwind-css)
+![Supabase](https://img.shields.io/badge/Supabase-DB%20Auth-green?logo=supabase)
+![License](https://img.shields.io/badge/license-MIT-yellow)
+![Web3](https://img.shields.io/badge/Web3-Ethers.js-purple)
 
-[Supabase](https://supabase.io) is an open source Firebase alternative. We're building the features of Firebase using enterprise-grade open source tools.
+EcoGreen PRO is a **Web3-powered platform** for the **EcoGreen token**, supporting global green initiatives using blockchain technology.  
+This website includes **token information, roadmap, whitelist registration, staking interface, wallet integration, and a holder dashboard.**
 
-This repository contains all the functionality for Supabase CLI.
+---
 
-- [x] Running Supabase locally
-- [x] Managing database migrations
-- [x] Creating and deploying Supabase Functions
-- [x] Generating types directly from your database schema
-- [x] Making authenticated HTTP requests to [Management API](https://supabase.com/docs/reference/api/introduction)
+## 📸 Preview
+> *(Add a screenshot of the homepage here)*  
+![Preview](https://via.placeholder.com/1000x500?text=EcoGreen+PRO+Preview)
 
-## Getting started
+---
 
-### Install the CLI
+## 🚀 Features
 
-Available via [NPM](https://www.npmjs.com) as dev dependency. To install:
+✅ Home, About, Roadmap, Tokenomics, Blog  
+✅ Whitelist Registration (Supabase integration)  
+✅ Countdown Timer for Whitelist Closing  
+✅ MetaMask Wallet Integration  
+✅ Holder Dashboard (Check token balance)  
+✅ Staking UI (Dummy version)  
+✅ Dark Mode Toggle  
+✅ Multi-language Support (EN/ID)  
+✅ SEO Metadata and Open Graph Tags  
 
+---
+
+## 📂 Project Structure
+
+ecogreen-pro/ │── app/ │   ├── about/page.js │   ├── blog/page.js │   ├── dashboard/page.js │   ├── roadmap/page.js │   ├── staking/page.js │   ├── tokenomics/page.js │   ├── whitelist/page.js │   ├── layout.js │   ├── page.js │   ├── globals.css │ │── components/ │   ├── Navbar.js │   ├── Footer.js │   ├── Hero.js │   ├── TokenStats.js │   ├── RoadmapTimeline.js │   ├── WhitelistForm.js │   ├── Countdown.js │   ├── TokenomicsChart.js │   ├── WalletButton.js │   ├── DarkModeToggle.js │ │── lib/ │   ├── supabaseClient.js │   ├── web3.js │ │── locales/ │   ├── en.json │   ├── id.json │ │── package.json │── tailwind.config.js │── postcss.config.js │── next.config.js │── .env.local
+
+---
+
+## 🛠 Installation & Setup
+
+### 1️⃣ Clone the repository
 ```bash
-npm i supabase --save-dev
-```
+git clone https://github.com/your-username/ecogreen-pro.git
+cd ecogreen-pro
 
-To install the beta release channel:
+2️⃣ Install dependencies
 
-```bash
-npm i supabase@beta --save-dev
-```
+npm install
 
-When installing with yarn 4, you need to disable experimental fetch with the following nodejs config.
+3️⃣ Configure environment variables
 
-```
-NODE_OPTIONS=--no-experimental-fetch yarn add supabase
-```
+Create a .env.local file in the root folder:
 
-> **Note**
-For Bun versions below v1.0.17, you must add `supabase` as a [trusted dependency](https://bun.sh/guides/install/trusted) before running `bun add -D supabase`.
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_KEY=your-anon-key
 
-<details>
-  <summary><b>macOS</b></summary>
+4️⃣ Run the development server
 
-  Available via [Homebrew](https://brew.sh). To install:
+npm run dev
 
-  ```sh
-  brew install supabase/tap/supabase
-  ```
+Open http://localhost:3000 in your browser.
 
-  To install the beta release channel:
-  
-  ```sh
-  brew install supabase/tap/supabase-beta
-  brew link --overwrite supabase-beta
-  ```
-  
-  To upgrade:
 
-  ```sh
-  brew upgrade supabase
-  ```
-</details>
+---
 
-<details>
-  <summary><b>Windows</b></summary>
+🔗 Tech Stack
 
-  Available via [Scoop](https://scoop.sh). To install:
+⚡ Next.js 14 (App Router)
 
-  ```powershell
-  scoop bucket add supabase https://github.com/supabase/scoop-bucket.git
-  scoop install supabase
-  ```
+🎨 Tailwind CSS
 
-  To upgrade:
+🔥 Supabase (Auth & Database)
 
-  ```powershell
-  scoop update supabase
-  ```
-</details>
+🪙 Ethers.js (Web3)
 
-<details>
-  <summary><b>Linux</b></summary>
+🎬 Framer Motion (Animations)
 
-  Available via [Homebrew](https://brew.sh) and Linux packages.
+📊 Recharts (Charts)
 
-  #### via Homebrew
+🌍 next-intl (Multi-language Support)
 
-  To install:
 
-  ```sh
-  brew install supabase/tap/supabase
-  ```
 
-  To upgrade:
+---
 
-  ```sh
-  brew upgrade supabase
-  ```
+📌 Features Roadmap
 
-  #### via Linux packages
+Feature	Status
 
-  Linux packages are provided in [Releases](https://github.com/supabase/cli/releases). To install, download the `.apk`/`.deb`/`.rpm`/`.pkg.tar.zst` file depending on your package manager and run the respective commands.
+Website Launch	✅ Done
+Whitelist + Supabase	✅ Done
+Wallet Integration	✅ Done
+Holder Dashboard	✅ Done
+Staking UI (Dummy)	✅ Done
+DAO Voting	🔜 Planned
+NFT Green Rewards	🔜 Planned
 
-  ```sh
-  sudo apk add --allow-untrusted <...>.apk
-  ```
 
-  ```sh
-  sudo dpkg -i <...>.deb
-  ```
 
-  ```sh
-  sudo rpm -i <...>.rpm
-  ```
+---
 
-  ```sh
-  sudo pacman -U <...>.pkg.tar.zst
-  ```
-</details>
+📄 License
 
-<details>
-  <summary><b>Other Platforms</b></summary>
+This project is licensed under the MIT License.
+© 2025 EcoGreen. All rights reserved.
 
-  You can also install the CLI via [go modules](https://go.dev/ref/mod#go-install) without the help of package managers.
 
-  ```sh
-  go install github.com/supabase/cli@latest
-  ```
+---
 
-  Add a symlink to the binary in `$PATH` for easier access:
+💚 Support EcoGreen
 
-  ```sh
-  ln -s "$(go env GOPATH)/bin/cli" /usr/bin/supabase
-  ```
-
-  This works on other non-standard Linux distros.
-</details>
-
-<details>
-  <summary><b>Community Maintained Packages</b></summary>
-
-  Available via [pkgx](https://pkgx.sh/). Package script [here](https://github.com/pkgxdev/pantry/blob/main/projects/supabase.com/cli/package.yml).
-  To install in your working directory:
-
-  ```bash
-  pkgx install supabase
-  ```
-
-  Available via [Nixpkgs](https://nixos.org/). Package script [here](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/supabase-cli/default.nix).
-</details>
-
-### Run the CLI
-
-```bash
-supabase bootstrap
-```
-
-Or using npx:
-
-```bash
-npx supabase bootstrap
-```
-
-The bootstrap command will guide you through the process of setting up a Supabase project using one of the [starter](https://github.com/supabase-community/supabase-samples/blob/main/samples.json) templates.
-
-## Docs
-
-Command & config reference can be found [here](https://supabase.com/docs/reference/cli/about).
-
-## Breaking changes
-
-We follow semantic versioning for changes that directly impact CLI commands, flags, and configurations.
-
-However, due to dependencies on other service images, we cannot guarantee that schema migrations, seed.sql, and generated types will always work for the same CLI major version. If you need such guarantees, we encourage you to pin a specific version of CLI in package.json.
-
-## Developing
-
-To run from source:
-
-```sh
-# Go >= 1.22
-go run . help
-```
+🌐 Website: https://ecogreen.com
+🐦 Twitter: @EcoGreenToken
+📧 Contact: support@ecogreen.com
