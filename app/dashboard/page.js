@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { getProvider, CONTRACT_ADDRESS, ABI } from "../../lib/web3";
+import { getProvider, CONTRACT_ADDRESS, ABI } from "../../lib/Web3";
 import { ethers } from "ethers";
 
 export default function Dashboard() {

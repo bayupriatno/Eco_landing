@@ -2,22 +2,28 @@
 import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (dark) {
+    if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+      setDarkMode(true);
     }
-  }, [dark]);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = darkMode ? "light" : "dark";
+    document.documentElement.classList.toggle("dark", !darkMode);
+    localStorage.theme = newTheme;
+    setDarkMode(!darkMode);
+  };
 
   return (
     <button
-      onClick={() => setDark(!dark)}
-      className="ml-2 px-3 py-1 border rounded text-sm bg-white text-ecoGreen"
+      onClick={toggleTheme}
+      className="px-3 py-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
     >
-      {dark ? "🌙 Dark" : "☀️ Light"}
+      {darkMode ? "🌙 Dark" : "☀️ Light"}
     </button>
   );
 }
