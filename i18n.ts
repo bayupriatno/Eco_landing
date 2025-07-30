@@ -8,4 +8,4 @@ export default getRequestConfig(() => ({
     en: require("./locales/en.json"),
     id: require("./locales/id.json"),
   },
-}));"
+}));
