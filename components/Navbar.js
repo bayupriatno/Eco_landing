@@ -2,6 +2,7 @@
 import Link from "next/link";
 import WalletButton from "./WalletButton";
 import DarkModeToggle from "./DarkModeToggle";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   return (
