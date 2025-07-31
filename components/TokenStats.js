@@ -1,3 +1,4 @@
+"use client";
 export default function TokenStats() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-6 p-10 text-center">

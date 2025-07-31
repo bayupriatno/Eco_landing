@@ -1,3 +1,4 @@
+"use client";
 export default function RoadmapTimeline() {
   const items = [
     { quarter: "Q1 2025", text: "Peluncuran Token & Website" },

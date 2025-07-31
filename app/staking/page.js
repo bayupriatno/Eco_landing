@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Staking() {
+export default function staking() {
   const [amount, setAmount] = useState("");
 
   const stake = () => alert(`Stake ${amount} ECO (dummy)`);
