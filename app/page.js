@@ -1,4 +1,3 @@
-"use client";
 import Hero from "../components/Hero";
 import TokenStats from "../components/TokenStats";
 
