@@ -4,7 +4,7 @@ const withNextIntl = require("next-intl/plugin")("./i18n.ts");
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["cdn.jsdelivr.net", "images.unsplash.com"], // sesuaikan jika perlu
+    domains: ["cdn.jsdelivr.net", "images.unsplash.com"], // tambah domain lain kalau perlu
   },
 };
 
