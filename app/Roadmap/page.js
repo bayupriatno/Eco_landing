@@ -1,6 +1,6 @@
 "use client";
 import RoadmapTimeline from "../../components/RoadmapTimeline";
 
-export default function roadmap() {
+export default function Roadmap() {
   return <RoadmapTimeline />;
 }

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getProvider, CONTRACT_ADDRESS, ABI } from "../../lib/Web3";
 import { ethers } from "ethers";
 
-export default function dashboard() {
+export default function Dashboard() {
   const [balance, setBalance] = useState(null);
   const [address, setAddress] = useState("");
 

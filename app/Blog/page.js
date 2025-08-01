@@ -1,5 +1,4 @@
-"use client";
-export default function blog() {
+export default function Blog() {
   const posts = [
     { title: "Peluncuran EcoGreen Token", date: "2025-07-01", desc: "EcoGreen resmi diluncurkan di jaringan Arbitrum." },
     { title: "Roadmap 2025 Dirilis", date: "2025-07-15", desc: "Kami mengumumkan roadmap lengkap untuk tahun 2025." },
